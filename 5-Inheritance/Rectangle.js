@@ -14,26 +14,37 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var Shape_1 = require("./Shape");
-var Circle = /** @class */ (function (_super) {
-    __extends(Circle, _super);
-    function Circle(theX, theY, _radius) {
+var Rectangle = /** @class */ (function (_super) {
+    __extends(Rectangle, _super);
+    function Rectangle(theX, theY, _width, _length) {
         var _this = _super.call(this, theX, theY) || this;
-        _this._radius = _radius;
+        _this._width = _width;
+        _this._length = _length;
         return _this;
     }
-    Object.defineProperty(Circle.prototype, "radius", {
+    Object.defineProperty(Rectangle.prototype, "width", {
         get: function () {
-            return this._radius;
+            return this._width;
         },
         set: function (value) {
-            this._radius = value;
+            this._width = value;
         },
         enumerable: true,
         configurable: true
     });
-    Circle.prototype.getInfo = function () {
-        return _super.prototype.getInfo.call(this) + (", radius=s" + this._radius);
+    Object.defineProperty(Rectangle.prototype, "length", {
+        get: function () {
+            return this._length;
+        },
+        set: function (value) {
+            this._length = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Rectangle.prototype.getInfo = function () {
+        return _super.prototype.getInfo.call(this) + (", width=" + this._width + ", length = " + this._length);
     };
-    return Circle;
+    return Rectangle;
 }(Shape_1.Shape));
-exports.Circle = Circle;
+exports.Rectangle = Rectangle;
